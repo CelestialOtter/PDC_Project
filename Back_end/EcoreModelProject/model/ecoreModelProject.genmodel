@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/EcoreModelProject/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/EcoreModelProject/src-gen" creationIcons="false"
     editDirectory="/EcoreModelProject.edit/src-gen" editorDirectory="/EcoreModelProject.editor/src-gen"
     modelPluginID="EcoreModelProject" modelName="EcoreModelProject" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>ecoreModelProject.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="EcoreModelProject" disposableProviderFactory="true" ecorePackage="ecoreModelProject.ecore#/"/>
+  <genPackages prefix="EcoreModelProject" disposableProviderFactory="true" ecorePackage="ecoreModelProject.ecore#/">
+    <genClasses ecoreClass="ecoreModelProject.ecore#//SpecificationsGrammar"/>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//BinaryOp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/specificationsgrammar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//BinaryOp/leftArguments"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//BinaryOp/rightArguments"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//Specifications">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//Specifications/specificationsgrammar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specifications/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specifications/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//Restaurant"/>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//And"/>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//Or"/>
+  </genPackages>
 </genmodel:GenModel>
