@@ -8,7 +8,7 @@ import ecoreModelProject.EcoreModelProjectFactory;
 import ecoreModelProject.EcoreModelProjectPackage;
 import ecoreModelProject.Or;
 import ecoreModelProject.Restaurant;
-import ecoreModelProject.Specifications;
+import ecoreModelProject.Specification;
 import ecoreModelProject.SpecificationsGrammar;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -44,7 +44,7 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass specificationsEClass = null;
+	private EClass specificationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,6 +144,24 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSpecificationsGrammar_Specifications() {
+		return (EReference) specificationsGrammarEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSpecificationsGrammar_Operations() {
+		return (EReference) specificationsGrammarEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBinaryOp() {
 		return binaryOpEClass;
 	}
@@ -153,7 +171,7 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryOp_Specificationsgrammar() {
+	public EReference getBinaryOp_RightSpecification() {
 		return (EReference) binaryOpEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -162,7 +180,7 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryOp_Specifications() {
+	public EReference getBinaryOp_LeftSpecification() {
 		return (EReference) binaryOpEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -171,8 +189,8 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSpecifications() {
-		return specificationsEClass;
+	public EClass getSpecification() {
+		return specificationEClass;
 	}
 
 	/**
@@ -180,8 +198,8 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecifications_Specificationsgrammar() {
-		return (EReference) specificationsEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSpecification_Name() {
+		return (EAttribute) specificationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -189,26 +207,8 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSpecifications_Name() {
-		return (EAttribute) specificationsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSpecifications_Arguments() {
-		return (EAttribute) specificationsEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSpecifications_Binaryop() {
-		return (EReference) specificationsEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSpecification_Arguments() {
+		return (EAttribute) specificationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -268,16 +268,16 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 
 		// Create classes and their features
 		specificationsGrammarEClass = createEClass(SPECIFICATIONS_GRAMMAR);
+		createEReference(specificationsGrammarEClass, SPECIFICATIONS_GRAMMAR__SPECIFICATIONS);
+		createEReference(specificationsGrammarEClass, SPECIFICATIONS_GRAMMAR__OPERATIONS);
 
 		binaryOpEClass = createEClass(BINARY_OP);
-		createEReference(binaryOpEClass, BINARY_OP__SPECIFICATIONSGRAMMAR);
-		createEReference(binaryOpEClass, BINARY_OP__SPECIFICATIONS);
+		createEReference(binaryOpEClass, BINARY_OP__RIGHT_SPECIFICATION);
+		createEReference(binaryOpEClass, BINARY_OP__LEFT_SPECIFICATION);
 
-		specificationsEClass = createEClass(SPECIFICATIONS);
-		createEReference(specificationsEClass, SPECIFICATIONS__SPECIFICATIONSGRAMMAR);
-		createEAttribute(specificationsEClass, SPECIFICATIONS__NAME);
-		createEAttribute(specificationsEClass, SPECIFICATIONS__ARGUMENTS);
-		createEReference(specificationsEClass, SPECIFICATIONS__BINARYOP);
+		specificationEClass = createEClass(SPECIFICATION);
+		createEAttribute(specificationEClass, SPECIFICATION__NAME);
+		createEAttribute(specificationEClass, SPECIFICATION__ARGUMENTS);
 
 		restaurantEClass = createEClass(RESTAURANT);
 
@@ -315,36 +315,36 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		restaurantEClass.getESuperTypes().add(this.getSpecifications());
+		restaurantEClass.getESuperTypes().add(this.getSpecification());
 		andEClass.getESuperTypes().add(this.getBinaryOp());
 		orEClass.getESuperTypes().add(this.getBinaryOp());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(specificationsGrammarEClass, SpecificationsGrammar.class, "SpecificationsGrammar", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSpecificationsGrammar_Specifications(), this.getSpecification(), null, "specifications", null,
+				0, -1, SpecificationsGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSpecificationsGrammar_Operations(), this.getBinaryOp(), null, "operations", null, 0, -1,
+				SpecificationsGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(binaryOpEClass, BinaryOp.class, "BinaryOp", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinaryOp_Specificationsgrammar(), this.getSpecificationsGrammar(), null,
-				"specificationsgrammar", null, 0, 1, BinaryOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryOp_Specifications(), this.getSpecifications(), this.getSpecifications_Binaryop(),
-				"specifications", null, 2, 2, BinaryOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryOp_RightSpecification(), this.getSpecification(), null, "rightSpecification", null, 0,
+				1, BinaryOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryOp_LeftSpecification(), this.getSpecification(), null, "leftSpecification", null, 0, 1,
+				BinaryOp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(specificationsEClass, Specifications.class, "Specifications", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(specificationEClass, Specification.class, "Specification", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecifications_Specificationsgrammar(), this.getSpecificationsGrammar(), null,
-				"specificationsgrammar", null, 0, 1, Specifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSpecifications_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specifications.class,
+		initEAttribute(getSpecification_Name(), ecorePackage.getEString(), "name", null, 0, 1, Specification.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSpecifications_Arguments(), ecorePackage.getEString(), "arguments", null, 0, 1,
-				Specifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getSpecification_Arguments(), ecorePackage.getEString(), "arguments", null, 0, 1,
+				Specification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecifications_Binaryop(), this.getBinaryOp(), this.getBinaryOp_Specifications(), "binaryop",
-				null, 0, 1, Specifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(restaurantEClass, Restaurant.class, "Restaurant", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

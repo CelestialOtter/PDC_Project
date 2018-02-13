@@ -9,16 +9,17 @@
   <foreignModel>ecoreModelProject.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="EcoreModelProject" disposableProviderFactory="true" ecorePackage="ecoreModelProject.ecore#/">
-    <genClasses ecoreClass="ecoreModelProject.ecore#//SpecificationsGrammar"/>
-    <genClasses ecoreClass="ecoreModelProject.ecore#//BinaryOp">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/specificationsgrammar"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/specifications"/>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//SpecificationsGrammar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//SpecificationsGrammar/specifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//SpecificationsGrammar/operations"/>
     </genClasses>
-    <genClasses ecoreClass="ecoreModelProject.ecore#//Specifications">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//Specifications/specificationsgrammar"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specifications/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specifications/arguments"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//Specifications/binaryop"/>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//BinaryOp">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/rightSpecification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/leftSpecification"/>
+    </genClasses>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//Specification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specification/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specification/arguments"/>
     </genClasses>
     <genClasses ecoreClass="ecoreModelProject.ecore#//Restaurant"/>
     <genClasses ecoreClass="ecoreModelProject.ecore#//And"/>

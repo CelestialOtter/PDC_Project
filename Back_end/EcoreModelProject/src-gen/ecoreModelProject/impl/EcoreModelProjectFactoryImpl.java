@@ -60,8 +60,8 @@ public class EcoreModelProjectFactoryImpl extends EFactoryImpl implements EcoreM
 			return createSpecificationsGrammar();
 		case EcoreModelProjectPackage.BINARY_OP:
 			return createBinaryOp();
-		case EcoreModelProjectPackage.SPECIFICATIONS:
-			return createSpecifications();
+		case EcoreModelProjectPackage.SPECIFICATION:
+			return createSpecification();
 		case EcoreModelProjectPackage.RESTAURANT:
 			return createRestaurant();
 		case EcoreModelProjectPackage.AND:
@@ -98,9 +98,9 @@ public class EcoreModelProjectFactoryImpl extends EFactoryImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Specifications createSpecifications() {
-		SpecificationsImpl specifications = new SpecificationsImpl();
-		return specifications;
+	public Specification createSpecification() {
+		SpecificationImpl specification = new SpecificationImpl();
+		return specification;
 	}
 
 	/**

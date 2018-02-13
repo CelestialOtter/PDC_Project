@@ -80,9 +80,9 @@ public class EcoreModelProjectSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case EcoreModelProjectPackage.SPECIFICATIONS: {
-			Specifications specifications = (Specifications) theEObject;
-			T result = caseSpecifications(specifications);
+		case EcoreModelProjectPackage.SPECIFICATION: {
+			Specification specification = (Specification) theEObject;
+			T result = caseSpecification(specification);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -91,7 +91,7 @@ public class EcoreModelProjectSwitch<T> extends Switch<T> {
 			Restaurant restaurant = (Restaurant) theEObject;
 			T result = caseRestaurant(restaurant);
 			if (result == null)
-				result = caseSpecifications(restaurant);
+				result = caseSpecification(restaurant);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -150,17 +150,17 @@ public class EcoreModelProjectSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Specifications</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Specifications</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Specification</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSpecifications(Specifications object) {
+	public T caseSpecification(Specification object) {
 		return null;
 	}
 
