@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class RestaurantImpl extends SpecificationsImpl implements Restaurant {
+public class RestaurantImpl extends SpecificationImpl implements Restaurant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

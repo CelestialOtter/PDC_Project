@@ -2,22 +2,21 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecoreModelProject" nsURI="http://www.example.org/ecoreModelProject"
     nsPrefix="ecoreModelProject">
-  <eClassifiers xsi:type="ecore:EClass" name="SpecificationsGrammar"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BinaryOp">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationsgrammar"
-        eType="#//SpecificationsGrammar"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specifications" lowerBound="2"
-        upperBound="2" eType="#//Specifications" eOpposite="#//Specifications/binaryop"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Search">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specifications" upperBound="-1"
+        eType="#//Specification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//BinaryOp" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Specifications">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specificationsgrammar"
-        eType="#//SpecificationsGrammar"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryOp">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightSpecification" eType="#//Specification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftSpecification" eType="#//Specification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Specification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arguments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="binaryop" eType="#//BinaryOp"
-        eOpposite="#//BinaryOp/specifications"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Restaurant" eSuperTypes="#//Specifications"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Restaurant" eSuperTypes="#//Specification"/>
   <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//BinaryOp"/>
   <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//BinaryOp"/>
 </ecore:EPackage>

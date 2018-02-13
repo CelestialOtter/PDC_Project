@@ -2,6 +2,10 @@
  */
 package ecoreModelProject.provider;
 
+import ecoreModelProject.EcoreModelProjectFactory;
+import ecoreModelProject.EcoreModelProjectPackage;
+import ecoreModelProject.Search;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -10,6 +14,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -17,14 +23,15 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link ecoreModelProject.SpecificationsGrammar} object.
+ * This is the item provider adapter for a {@link ecoreModelProject.Search} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpecificationsGrammarItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class SearchItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -32,7 +39,7 @@ public class SpecificationsGrammarItemProvider extends ItemProviderAdapter imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecificationsGrammarItemProvider(AdapterFactory adapterFactory) {
+	public SearchItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -52,14 +59,45 @@ public class SpecificationsGrammarItemProvider extends ItemProviderAdapter imple
 	}
 
 	/**
-	 * This returns SpecificationsGrammar.gif.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(EcoreModelProjectPackage.Literals.SEARCH__SPECIFICATIONS);
+			childrenFeatures.add(EcoreModelProjectPackage.Literals.SEARCH__OPERATIONS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns Search.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SpecificationsGrammar"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Search"));
 	}
 
 	/**
@@ -80,7 +118,7 @@ public class SpecificationsGrammarItemProvider extends ItemProviderAdapter imple
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SpecificationsGrammar_type");
+		return getString("_UI_Search_type");
 	}
 
 	/**
@@ -93,6 +131,13 @@ public class SpecificationsGrammarItemProvider extends ItemProviderAdapter imple
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Search.class)) {
+		case EcoreModelProjectPackage.SEARCH__SPECIFICATIONS:
+		case EcoreModelProjectPackage.SEARCH__OPERATIONS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -106,6 +151,21 @@ public class SpecificationsGrammarItemProvider extends ItemProviderAdapter imple
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(EcoreModelProjectPackage.Literals.SEARCH__SPECIFICATIONS,
+				EcoreModelProjectFactory.eINSTANCE.createSpecification()));
+
+		newChildDescriptors.add(createChildParameter(EcoreModelProjectPackage.Literals.SEARCH__SPECIFICATIONS,
+				EcoreModelProjectFactory.eINSTANCE.createRestaurant()));
+
+		newChildDescriptors.add(createChildParameter(EcoreModelProjectPackage.Literals.SEARCH__OPERATIONS,
+				EcoreModelProjectFactory.eINSTANCE.createBinaryOp()));
+
+		newChildDescriptors.add(createChildParameter(EcoreModelProjectPackage.Literals.SEARCH__OPERATIONS,
+				EcoreModelProjectFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(EcoreModelProjectPackage.Literals.SEARCH__OPERATIONS,
+				EcoreModelProjectFactory.eINSTANCE.createOr()));
 	}
 
 	/**

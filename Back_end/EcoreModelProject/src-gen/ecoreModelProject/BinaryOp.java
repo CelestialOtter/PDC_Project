@@ -2,7 +2,6 @@
  */
 package ecoreModelProject;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ecoreModelProject.BinaryOp#getSpecificationsgrammar <em>Specificationsgrammar</em>}</li>
- *   <li>{@link ecoreModelProject.BinaryOp#getSpecifications <em>Specifications</em>}</li>
+ *   <li>{@link ecoreModelProject.BinaryOp#getRightSpecification <em>Right Specification</em>}</li>
+ *   <li>{@link ecoreModelProject.BinaryOp#getLeftSpecification <em>Left Specification</em>}</li>
  * </ul>
  *
  * @see ecoreModelProject.EcoreModelProjectPackage#getBinaryOp()
@@ -24,47 +23,55 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface BinaryOp extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Specificationsgrammar</b></em>' reference.
+	 * Returns the value of the '<em><b>Right Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Specificationsgrammar</em>' reference isn't clear,
+	 * If the meaning of the '<em>Right Specification</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specificationsgrammar</em>' reference.
-	 * @see #setSpecificationsgrammar(SpecificationsGrammar)
-	 * @see ecoreModelProject.EcoreModelProjectPackage#getBinaryOp_Specificationsgrammar()
+	 * @return the value of the '<em>Right Specification</em>' reference.
+	 * @see #setRightSpecification(Specification)
+	 * @see ecoreModelProject.EcoreModelProjectPackage#getBinaryOp_RightSpecification()
 	 * @model
 	 * @generated
 	 */
-	SpecificationsGrammar getSpecificationsgrammar();
+	Specification getRightSpecification();
 
 	/**
-	 * Sets the value of the '{@link ecoreModelProject.BinaryOp#getSpecificationsgrammar <em>Specificationsgrammar</em>}' reference.
+	 * Sets the value of the '{@link ecoreModelProject.BinaryOp#getRightSpecification <em>Right Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Specificationsgrammar</em>' reference.
-	 * @see #getSpecificationsgrammar()
+	 * @param value the new value of the '<em>Right Specification</em>' reference.
+	 * @see #getRightSpecification()
 	 * @generated
 	 */
-	void setSpecificationsgrammar(SpecificationsGrammar value);
+	void setRightSpecification(Specification value);
 
 	/**
-	 * Returns the value of the '<em><b>Specifications</b></em>' reference list.
-	 * The list contents are of type {@link ecoreModelProject.Specifications}.
-	 * It is bidirectional and its opposite is '{@link ecoreModelProject.Specifications#getBinaryop <em>Binaryop</em>}'.
+	 * Returns the value of the '<em><b>Left Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Specifications</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Left Specification</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specifications</em>' reference list.
-	 * @see ecoreModelProject.EcoreModelProjectPackage#getBinaryOp_Specifications()
-	 * @see ecoreModelProject.Specifications#getBinaryop
-	 * @model opposite="binaryop" lower="2" upper="2"
+	 * @return the value of the '<em>Left Specification</em>' reference.
+	 * @see #setLeftSpecification(Specification)
+	 * @see ecoreModelProject.EcoreModelProjectPackage#getBinaryOp_LeftSpecification()
+	 * @model
 	 * @generated
 	 */
-	EList<Specifications> getSpecifications();
+	Specification getLeftSpecification();
+
+	/**
+	 * Sets the value of the '{@link ecoreModelProject.BinaryOp#getLeftSpecification <em>Left Specification</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Left Specification</em>' reference.
+	 * @see #getLeftSpecification()
+	 * @generated
+	 */
+	void setLeftSpecification(Specification value);
 
 } // BinaryOp

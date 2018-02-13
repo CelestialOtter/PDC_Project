@@ -57,32 +57,50 @@ public interface EcoreModelProjectPackage extends EPackage {
 	EcoreModelProjectPackage eINSTANCE = ecoreModelProject.impl.EcoreModelProjectPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link ecoreModelProject.impl.SpecificationsGrammarImpl <em>Specifications Grammar</em>}' class.
+	 * The meta object id for the '{@link ecoreModelProject.impl.SearchImpl <em>Search</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ecoreModelProject.impl.SpecificationsGrammarImpl
-	 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSpecificationsGrammar()
+	 * @see ecoreModelProject.impl.SearchImpl
+	 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSearch()
 	 * @generated
 	 */
-	int SPECIFICATIONS_GRAMMAR = 0;
+	int SEARCH = 0;
 
 	/**
-	 * The number of structural features of the '<em>Specifications Grammar</em>' class.
+	 * The feature id for the '<em><b>Specifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFICATIONS_GRAMMAR_FEATURE_COUNT = 0;
+	int SEARCH__SPECIFICATIONS = 0;
 
 	/**
-	 * The number of operations of the '<em>Specifications Grammar</em>' class.
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFICATIONS_GRAMMAR_OPERATION_COUNT = 0;
+	int SEARCH__OPERATIONS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Search</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Search</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEARCH_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ecoreModelProject.impl.BinaryOpImpl <em>Binary Op</em>}' class.
@@ -95,22 +113,22 @@ public interface EcoreModelProjectPackage extends EPackage {
 	int BINARY_OP = 1;
 
 	/**
-	 * The feature id for the '<em><b>Specificationsgrammar</b></em>' reference.
+	 * The feature id for the '<em><b>Right Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_OP__SPECIFICATIONSGRAMMAR = 0;
+	int BINARY_OP__RIGHT_SPECIFICATION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Specifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Left Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_OP__SPECIFICATIONS = 1;
+	int BINARY_OP__LEFT_SPECIFICATION = 1;
 
 	/**
 	 * The number of structural features of the '<em>Binary Op</em>' class.
@@ -131,23 +149,14 @@ public interface EcoreModelProjectPackage extends EPackage {
 	int BINARY_OP_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ecoreModelProject.impl.SpecificationsImpl <em>Specifications</em>}' class.
+	 * The meta object id for the '{@link ecoreModelProject.impl.SpecificationImpl <em>Specification</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see ecoreModelProject.impl.SpecificationsImpl
-	 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSpecifications()
+	 * @see ecoreModelProject.impl.SpecificationImpl
+	 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSpecification()
 	 * @generated
 	 */
-	int SPECIFICATIONS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Specificationsgrammar</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIFICATIONS__SPECIFICATIONSGRAMMAR = 0;
+	int SPECIFICATION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -156,7 +165,7 @@ public interface EcoreModelProjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFICATIONS__NAME = 1;
+	int SPECIFICATION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' attribute.
@@ -165,34 +174,25 @@ public interface EcoreModelProjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFICATIONS__ARGUMENTS = 2;
+	int SPECIFICATION__ARGUMENTS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Binaryop</b></em>' reference.
+	 * The number of structural features of the '<em>Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFICATIONS__BINARYOP = 3;
+	int SPECIFICATION_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of structural features of the '<em>Specifications</em>' class.
+	 * The number of operations of the '<em>Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIFICATIONS_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Specifications</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIFICATIONS_OPERATION_COUNT = 0;
+	int SPECIFICATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ecoreModelProject.impl.RestaurantImpl <em>Restaurant</em>}' class.
@@ -205,22 +205,13 @@ public interface EcoreModelProjectPackage extends EPackage {
 	int RESTAURANT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Specificationsgrammar</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESTAURANT__SPECIFICATIONSGRAMMAR = SPECIFICATIONS__SPECIFICATIONSGRAMMAR;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESTAURANT__NAME = SPECIFICATIONS__NAME;
+	int RESTAURANT__NAME = SPECIFICATION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Arguments</b></em>' attribute.
@@ -229,16 +220,7 @@ public interface EcoreModelProjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESTAURANT__ARGUMENTS = SPECIFICATIONS__ARGUMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Binaryop</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESTAURANT__BINARYOP = SPECIFICATIONS__BINARYOP;
+	int RESTAURANT__ARGUMENTS = SPECIFICATION__ARGUMENTS;
 
 	/**
 	 * The number of structural features of the '<em>Restaurant</em>' class.
@@ -247,7 +229,7 @@ public interface EcoreModelProjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESTAURANT_FEATURE_COUNT = SPECIFICATIONS_FEATURE_COUNT + 0;
+	int RESTAURANT_FEATURE_COUNT = SPECIFICATION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Restaurant</em>' class.
@@ -256,7 +238,7 @@ public interface EcoreModelProjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESTAURANT_OPERATION_COUNT = SPECIFICATIONS_OPERATION_COUNT + 0;
+	int RESTAURANT_OPERATION_COUNT = SPECIFICATION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ecoreModelProject.impl.AndImpl <em>And</em>}' class.
@@ -269,22 +251,22 @@ public interface EcoreModelProjectPackage extends EPackage {
 	int AND = 4;
 
 	/**
-	 * The feature id for the '<em><b>Specificationsgrammar</b></em>' reference.
+	 * The feature id for the '<em><b>Right Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AND__SPECIFICATIONSGRAMMAR = BINARY_OP__SPECIFICATIONSGRAMMAR;
+	int AND__RIGHT_SPECIFICATION = BINARY_OP__RIGHT_SPECIFICATION;
 
 	/**
-	 * The feature id for the '<em><b>Specifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Left Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AND__SPECIFICATIONS = BINARY_OP__SPECIFICATIONS;
+	int AND__LEFT_SPECIFICATION = BINARY_OP__LEFT_SPECIFICATION;
 
 	/**
 	 * The number of structural features of the '<em>And</em>' class.
@@ -315,22 +297,22 @@ public interface EcoreModelProjectPackage extends EPackage {
 	int OR = 5;
 
 	/**
-	 * The feature id for the '<em><b>Specificationsgrammar</b></em>' reference.
+	 * The feature id for the '<em><b>Right Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OR__SPECIFICATIONSGRAMMAR = BINARY_OP__SPECIFICATIONSGRAMMAR;
+	int OR__RIGHT_SPECIFICATION = BINARY_OP__RIGHT_SPECIFICATION;
 
 	/**
-	 * The feature id for the '<em><b>Specifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Left Specification</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OR__SPECIFICATIONS = BINARY_OP__SPECIFICATIONS;
+	int OR__LEFT_SPECIFICATION = BINARY_OP__LEFT_SPECIFICATION;
 
 	/**
 	 * The number of structural features of the '<em>Or</em>' class.
@@ -351,14 +333,36 @@ public interface EcoreModelProjectPackage extends EPackage {
 	int OR_OPERATION_COUNT = BINARY_OP_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link ecoreModelProject.SpecificationsGrammar <em>Specifications Grammar</em>}'.
+	 * Returns the meta object for class '{@link ecoreModelProject.Search <em>Search</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Specifications Grammar</em>'.
-	 * @see ecoreModelProject.SpecificationsGrammar
+	 * @return the meta object for class '<em>Search</em>'.
+	 * @see ecoreModelProject.Search
 	 * @generated
 	 */
-	EClass getSpecificationsGrammar();
+	EClass getSearch();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ecoreModelProject.Search#getSpecifications <em>Specifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Specifications</em>'.
+	 * @see ecoreModelProject.Search#getSpecifications()
+	 * @see #getSearch()
+	 * @generated
+	 */
+	EReference getSearch_Specifications();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ecoreModelProject.Search#getOperations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @see ecoreModelProject.Search#getOperations()
+	 * @see #getSearch()
+	 * @generated
+	 */
+	EReference getSearch_Operations();
 
 	/**
 	 * Returns the meta object for class '{@link ecoreModelProject.BinaryOp <em>Binary Op</em>}'.
@@ -371,80 +375,58 @@ public interface EcoreModelProjectPackage extends EPackage {
 	EClass getBinaryOp();
 
 	/**
-	 * Returns the meta object for the reference '{@link ecoreModelProject.BinaryOp#getSpecificationsgrammar <em>Specificationsgrammar</em>}'.
+	 * Returns the meta object for the reference '{@link ecoreModelProject.BinaryOp#getRightSpecification <em>Right Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Specificationsgrammar</em>'.
-	 * @see ecoreModelProject.BinaryOp#getSpecificationsgrammar()
+	 * @return the meta object for the reference '<em>Right Specification</em>'.
+	 * @see ecoreModelProject.BinaryOp#getRightSpecification()
 	 * @see #getBinaryOp()
 	 * @generated
 	 */
-	EReference getBinaryOp_Specificationsgrammar();
+	EReference getBinaryOp_RightSpecification();
 
 	/**
-	 * Returns the meta object for the reference list '{@link ecoreModelProject.BinaryOp#getSpecifications <em>Specifications</em>}'.
+	 * Returns the meta object for the reference '{@link ecoreModelProject.BinaryOp#getLeftSpecification <em>Left Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Specifications</em>'.
-	 * @see ecoreModelProject.BinaryOp#getSpecifications()
+	 * @return the meta object for the reference '<em>Left Specification</em>'.
+	 * @see ecoreModelProject.BinaryOp#getLeftSpecification()
 	 * @see #getBinaryOp()
 	 * @generated
 	 */
-	EReference getBinaryOp_Specifications();
+	EReference getBinaryOp_LeftSpecification();
 
 	/**
-	 * Returns the meta object for class '{@link ecoreModelProject.Specifications <em>Specifications</em>}'.
+	 * Returns the meta object for class '{@link ecoreModelProject.Specification <em>Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Specifications</em>'.
-	 * @see ecoreModelProject.Specifications
+	 * @return the meta object for class '<em>Specification</em>'.
+	 * @see ecoreModelProject.Specification
 	 * @generated
 	 */
-	EClass getSpecifications();
+	EClass getSpecification();
 
 	/**
-	 * Returns the meta object for the reference '{@link ecoreModelProject.Specifications#getSpecificationsgrammar <em>Specificationsgrammar</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Specificationsgrammar</em>'.
-	 * @see ecoreModelProject.Specifications#getSpecificationsgrammar()
-	 * @see #getSpecifications()
-	 * @generated
-	 */
-	EReference getSpecifications_Specificationsgrammar();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ecoreModelProject.Specifications#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link ecoreModelProject.Specification#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ecoreModelProject.Specifications#getName()
-	 * @see #getSpecifications()
+	 * @see ecoreModelProject.Specification#getName()
+	 * @see #getSpecification()
 	 * @generated
 	 */
-	EAttribute getSpecifications_Name();
+	EAttribute getSpecification_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ecoreModelProject.Specifications#getArguments <em>Arguments</em>}'.
+	 * Returns the meta object for the attribute '{@link ecoreModelProject.Specification#getArguments <em>Arguments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Arguments</em>'.
-	 * @see ecoreModelProject.Specifications#getArguments()
-	 * @see #getSpecifications()
+	 * @see ecoreModelProject.Specification#getArguments()
+	 * @see #getSpecification()
 	 * @generated
 	 */
-	EAttribute getSpecifications_Arguments();
-
-	/**
-	 * Returns the meta object for the reference '{@link ecoreModelProject.Specifications#getBinaryop <em>Binaryop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Binaryop</em>'.
-	 * @see ecoreModelProject.Specifications#getBinaryop()
-	 * @see #getSpecifications()
-	 * @generated
-	 */
-	EReference getSpecifications_Binaryop();
+	EAttribute getSpecification_Arguments();
 
 	/**
 	 * Returns the meta object for class '{@link ecoreModelProject.Restaurant <em>Restaurant</em>}'.
@@ -500,14 +482,30 @@ public interface EcoreModelProjectPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link ecoreModelProject.impl.SpecificationsGrammarImpl <em>Specifications Grammar</em>}' class.
+		 * The meta object literal for the '{@link ecoreModelProject.impl.SearchImpl <em>Search</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ecoreModelProject.impl.SpecificationsGrammarImpl
-		 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSpecificationsGrammar()
+		 * @see ecoreModelProject.impl.SearchImpl
+		 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSearch()
 		 * @generated
 		 */
-		EClass SPECIFICATIONS_GRAMMAR = eINSTANCE.getSpecificationsGrammar();
+		EClass SEARCH = eINSTANCE.getSearch();
+
+		/**
+		 * The meta object literal for the '<em><b>Specifications</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEARCH__SPECIFICATIONS = eINSTANCE.getSearch_Specifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEARCH__OPERATIONS = eINSTANCE.getSearch_Operations();
 
 		/**
 		 * The meta object literal for the '{@link ecoreModelProject.impl.BinaryOpImpl <em>Binary Op</em>}' class.
@@ -520,38 +518,30 @@ public interface EcoreModelProjectPackage extends EPackage {
 		EClass BINARY_OP = eINSTANCE.getBinaryOp();
 
 		/**
-		 * The meta object literal for the '<em><b>Specificationsgrammar</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Right Specification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_OP__SPECIFICATIONSGRAMMAR = eINSTANCE.getBinaryOp_Specificationsgrammar();
+		EReference BINARY_OP__RIGHT_SPECIFICATION = eINSTANCE.getBinaryOp_RightSpecification();
 
 		/**
-		 * The meta object literal for the '<em><b>Specifications</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Left Specification</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_OP__SPECIFICATIONS = eINSTANCE.getBinaryOp_Specifications();
+		EReference BINARY_OP__LEFT_SPECIFICATION = eINSTANCE.getBinaryOp_LeftSpecification();
 
 		/**
-		 * The meta object literal for the '{@link ecoreModelProject.impl.SpecificationsImpl <em>Specifications</em>}' class.
+		 * The meta object literal for the '{@link ecoreModelProject.impl.SpecificationImpl <em>Specification</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see ecoreModelProject.impl.SpecificationsImpl
-		 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSpecifications()
+		 * @see ecoreModelProject.impl.SpecificationImpl
+		 * @see ecoreModelProject.impl.EcoreModelProjectPackageImpl#getSpecification()
 		 * @generated
 		 */
-		EClass SPECIFICATIONS = eINSTANCE.getSpecifications();
-
-		/**
-		 * The meta object literal for the '<em><b>Specificationsgrammar</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPECIFICATIONS__SPECIFICATIONSGRAMMAR = eINSTANCE.getSpecifications_Specificationsgrammar();
+		EClass SPECIFICATION = eINSTANCE.getSpecification();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -559,7 +549,7 @@ public interface EcoreModelProjectPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SPECIFICATIONS__NAME = eINSTANCE.getSpecifications_Name();
+		EAttribute SPECIFICATION__NAME = eINSTANCE.getSpecification_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Arguments</b></em>' attribute feature.
@@ -567,15 +557,7 @@ public interface EcoreModelProjectPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SPECIFICATIONS__ARGUMENTS = eINSTANCE.getSpecifications_Arguments();
-
-		/**
-		 * The meta object literal for the '<em><b>Binaryop</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPECIFICATIONS__BINARYOP = eINSTANCE.getSpecifications_Binaryop();
+		EAttribute SPECIFICATION__ARGUMENTS = eINSTANCE.getSpecification_Arguments();
 
 		/**
 		 * The meta object literal for the '{@link ecoreModelProject.impl.RestaurantImpl <em>Restaurant</em>}' class.

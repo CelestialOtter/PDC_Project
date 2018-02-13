@@ -50,41 +50,41 @@ public class BinaryOpItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSpecificationsgrammarPropertyDescriptor(object);
-			addSpecificationsPropertyDescriptor(object);
+			addRightSpecificationPropertyDescriptor(object);
+			addLeftSpecificationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Specificationsgrammar feature.
+	 * This adds a property descriptor for the Right Specification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSpecificationsgrammarPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_BinaryOp_specificationsgrammar_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_BinaryOp_specificationsgrammar_feature",
-						"_UI_BinaryOp_type"),
-				EcoreModelProjectPackage.Literals.BINARY_OP__SPECIFICATIONSGRAMMAR, true, false, true, null, null,
-				null));
+	protected void addRightSpecificationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_BinaryOp_rightSpecification_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BinaryOp_rightSpecification_feature",
+								"_UI_BinaryOp_type"),
+						EcoreModelProjectPackage.Literals.BINARY_OP__RIGHT_SPECIFICATION, true, false, true, null, null,
+						null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Specifications feature.
+	 * This adds a property descriptor for the Left Specification feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSpecificationsPropertyDescriptor(Object object) {
+	protected void addLeftSpecificationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_BinaryOp_specifications_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_BinaryOp_specifications_feature",
+						getResourceLocator(), getString("_UI_BinaryOp_leftSpecification_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BinaryOp_leftSpecification_feature",
 								"_UI_BinaryOp_type"),
-						EcoreModelProjectPackage.Literals.BINARY_OP__SPECIFICATIONS, true, false, true, null, null,
+						EcoreModelProjectPackage.Literals.BINARY_OP__LEFT_SPECIFICATION, true, false, true, null, null,
 						null));
 	}
 

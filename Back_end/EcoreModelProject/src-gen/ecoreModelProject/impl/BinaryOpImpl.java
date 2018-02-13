@@ -4,21 +4,13 @@ package ecoreModelProject.impl;
 
 import ecoreModelProject.BinaryOp;
 import ecoreModelProject.EcoreModelProjectPackage;
-import ecoreModelProject.Specifications;
-import ecoreModelProject.SpecificationsGrammar;
-
-import java.util.Collection;
+import ecoreModelProject.Specification;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,32 +20,32 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link ecoreModelProject.impl.BinaryOpImpl#getSpecificationsgrammar <em>Specificationsgrammar</em>}</li>
- *   <li>{@link ecoreModelProject.impl.BinaryOpImpl#getSpecifications <em>Specifications</em>}</li>
+ *   <li>{@link ecoreModelProject.impl.BinaryOpImpl#getRightSpecification <em>Right Specification</em>}</li>
+ *   <li>{@link ecoreModelProject.impl.BinaryOpImpl#getLeftSpecification <em>Left Specification</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BinaryOpImpl extends MinimalEObjectImpl.Container implements BinaryOp {
 	/**
-	 * The cached value of the '{@link #getSpecificationsgrammar() <em>Specificationsgrammar</em>}' reference.
+	 * The cached value of the '{@link #getRightSpecification() <em>Right Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecificationsgrammar()
+	 * @see #getRightSpecification()
 	 * @generated
 	 * @ordered
 	 */
-	protected SpecificationsGrammar specificationsgrammar;
+	protected Specification rightSpecification;
 
 	/**
-	 * The cached value of the '{@link #getSpecifications() <em>Specifications</em>}' reference list.
+	 * The cached value of the '{@link #getLeftSpecification() <em>Left Specification</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSpecifications()
+	 * @see #getLeftSpecification()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Specifications> specifications;
+	protected Specification leftSpecification;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,18 +71,18 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecificationsGrammar getSpecificationsgrammar() {
-		if (specificationsgrammar != null && specificationsgrammar.eIsProxy()) {
-			InternalEObject oldSpecificationsgrammar = (InternalEObject) specificationsgrammar;
-			specificationsgrammar = (SpecificationsGrammar) eResolveProxy(oldSpecificationsgrammar);
-			if (specificationsgrammar != oldSpecificationsgrammar) {
+	public Specification getRightSpecification() {
+		if (rightSpecification != null && rightSpecification.eIsProxy()) {
+			InternalEObject oldRightSpecification = (InternalEObject) rightSpecification;
+			rightSpecification = (Specification) eResolveProxy(oldRightSpecification);
+			if (rightSpecification != oldRightSpecification) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONSGRAMMAR, oldSpecificationsgrammar,
-							specificationsgrammar));
+							EcoreModelProjectPackage.BINARY_OP__RIGHT_SPECIFICATION, oldRightSpecification,
+							rightSpecification));
 			}
 		}
-		return specificationsgrammar;
+		return rightSpecification;
 	}
 
 	/**
@@ -98,8 +90,8 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecificationsGrammar basicGetSpecificationsgrammar() {
-		return specificationsgrammar;
+	public Specification basicGetRightSpecification() {
+		return rightSpecification;
 	}
 
 	/**
@@ -107,13 +99,13 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpecificationsgrammar(SpecificationsGrammar newSpecificationsgrammar) {
-		SpecificationsGrammar oldSpecificationsgrammar = specificationsgrammar;
-		specificationsgrammar = newSpecificationsgrammar;
+	public void setRightSpecification(Specification newRightSpecification) {
+		Specification oldRightSpecification = rightSpecification;
+		rightSpecification = newRightSpecification;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONSGRAMMAR, oldSpecificationsgrammar,
-					specificationsgrammar));
+					EcoreModelProjectPackage.BINARY_OP__RIGHT_SPECIFICATION, oldRightSpecification,
+					rightSpecification));
 	}
 
 	/**
@@ -121,13 +113,18 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Specifications> getSpecifications() {
-		if (specifications == null) {
-			specifications = new EObjectWithInverseResolvingEList<Specifications>(Specifications.class, this,
-					EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONS,
-					EcoreModelProjectPackage.SPECIFICATIONS__BINARYOP);
+	public Specification getLeftSpecification() {
+		if (leftSpecification != null && leftSpecification.eIsProxy()) {
+			InternalEObject oldLeftSpecification = (InternalEObject) leftSpecification;
+			leftSpecification = (Specification) eResolveProxy(oldLeftSpecification);
+			if (leftSpecification != oldLeftSpecification) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							EcoreModelProjectPackage.BINARY_OP__LEFT_SPECIFICATION, oldLeftSpecification,
+							leftSpecification));
+			}
 		}
-		return specifications;
+		return leftSpecification;
 	}
 
 	/**
@@ -135,14 +132,8 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getSpecifications()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+	public Specification basicGetLeftSpecification() {
+		return leftSpecification;
 	}
 
 	/**
@@ -150,13 +141,12 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONS:
-			return ((InternalEList<?>) getSpecifications()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setLeftSpecification(Specification newLeftSpecification) {
+		Specification oldLeftSpecification = leftSpecification;
+		leftSpecification = newLeftSpecification;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					EcoreModelProjectPackage.BINARY_OP__LEFT_SPECIFICATION, oldLeftSpecification, leftSpecification));
 	}
 
 	/**
@@ -167,12 +157,14 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONSGRAMMAR:
+		case EcoreModelProjectPackage.BINARY_OP__RIGHT_SPECIFICATION:
 			if (resolve)
-				return getSpecificationsgrammar();
-			return basicGetSpecificationsgrammar();
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONS:
-			return getSpecifications();
+				return getRightSpecification();
+			return basicGetRightSpecification();
+		case EcoreModelProjectPackage.BINARY_OP__LEFT_SPECIFICATION:
+			if (resolve)
+				return getLeftSpecification();
+			return basicGetLeftSpecification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,12 +178,11 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONSGRAMMAR:
-			setSpecificationsgrammar((SpecificationsGrammar) newValue);
+		case EcoreModelProjectPackage.BINARY_OP__RIGHT_SPECIFICATION:
+			setRightSpecification((Specification) newValue);
 			return;
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONS:
-			getSpecifications().clear();
-			getSpecifications().addAll((Collection<? extends Specifications>) newValue);
+		case EcoreModelProjectPackage.BINARY_OP__LEFT_SPECIFICATION:
+			setLeftSpecification((Specification) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -205,11 +196,11 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONSGRAMMAR:
-			setSpecificationsgrammar((SpecificationsGrammar) null);
+		case EcoreModelProjectPackage.BINARY_OP__RIGHT_SPECIFICATION:
+			setRightSpecification((Specification) null);
 			return;
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONS:
-			getSpecifications().clear();
+		case EcoreModelProjectPackage.BINARY_OP__LEFT_SPECIFICATION:
+			setLeftSpecification((Specification) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -223,10 +214,10 @@ public class BinaryOpImpl extends MinimalEObjectImpl.Container implements Binary
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONSGRAMMAR:
-			return specificationsgrammar != null;
-		case EcoreModelProjectPackage.BINARY_OP__SPECIFICATIONS:
-			return specifications != null && !specifications.isEmpty();
+		case EcoreModelProjectPackage.BINARY_OP__RIGHT_SPECIFICATION:
+			return rightSpecification != null;
+		case EcoreModelProjectPackage.BINARY_OP__LEFT_SPECIFICATION:
+			return leftSpecification != null;
 		}
 		return super.eIsSet(featureID);
 	}

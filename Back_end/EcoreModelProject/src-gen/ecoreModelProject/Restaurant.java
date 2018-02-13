@@ -12,5 +12,5 @@ package ecoreModelProject;
  * @model
  * @generated
  */
-public interface Restaurant extends Specifications {
+public interface Restaurant extends Specification {
 } // Restaurant

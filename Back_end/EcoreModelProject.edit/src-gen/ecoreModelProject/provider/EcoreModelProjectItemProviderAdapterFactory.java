@@ -73,26 +73,26 @@ public class EcoreModelProjectItemProviderAdapterFactory extends EcoreModelProje
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ecoreModelProject.SpecificationsGrammar} instances.
+	 * This keeps track of the one adapter used for all {@link ecoreModelProject.Search} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SpecificationsGrammarItemProvider specificationsGrammarItemProvider;
+	protected SearchItemProvider searchItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link ecoreModelProject.SpecificationsGrammar}.
+	 * This creates an adapter for a {@link ecoreModelProject.Search}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSpecificationsGrammarAdapter() {
-		if (specificationsGrammarItemProvider == null) {
-			specificationsGrammarItemProvider = new SpecificationsGrammarItemProvider(this);
+	public Adapter createSearchAdapter() {
+		if (searchItemProvider == null) {
+			searchItemProvider = new SearchItemProvider(this);
 		}
 
-		return specificationsGrammarItemProvider;
+		return searchItemProvider;
 	}
 
 	/**
@@ -119,26 +119,26 @@ public class EcoreModelProjectItemProviderAdapterFactory extends EcoreModelProje
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ecoreModelProject.Specifications} instances.
+	 * This keeps track of the one adapter used for all {@link ecoreModelProject.Specification} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SpecificationsItemProvider specificationsItemProvider;
+	protected SpecificationItemProvider specificationItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link ecoreModelProject.Specifications}.
+	 * This creates an adapter for a {@link ecoreModelProject.Specification}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSpecificationsAdapter() {
-		if (specificationsItemProvider == null) {
-			specificationsItemProvider = new SpecificationsItemProvider(this);
+	public Adapter createSpecificationAdapter() {
+		if (specificationItemProvider == null) {
+			specificationItemProvider = new SpecificationItemProvider(this);
 		}
 
-		return specificationsItemProvider;
+		return specificationItemProvider;
 	}
 
 	/**
@@ -309,12 +309,12 @@ public class EcoreModelProjectItemProviderAdapterFactory extends EcoreModelProje
 	 * @generated
 	 */
 	public void dispose() {
-		if (specificationsGrammarItemProvider != null)
-			specificationsGrammarItemProvider.dispose();
+		if (searchItemProvider != null)
+			searchItemProvider.dispose();
 		if (binaryOpItemProvider != null)
 			binaryOpItemProvider.dispose();
-		if (specificationsItemProvider != null)
-			specificationsItemProvider.dispose();
+		if (specificationItemProvider != null)
+			specificationItemProvider.dispose();
 		if (restaurantItemProvider != null)
 			restaurantItemProvider.dispose();
 		if (andItemProvider != null)

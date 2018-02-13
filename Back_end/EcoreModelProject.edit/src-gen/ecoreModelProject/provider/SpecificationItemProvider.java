@@ -3,7 +3,7 @@
 package ecoreModelProject.provider;
 
 import ecoreModelProject.EcoreModelProjectPackage;
-import ecoreModelProject.Specifications;
+import ecoreModelProject.Specification;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link ecoreModelProject.Specifications} object.
+ * This is the item provider adapter for a {@link ecoreModelProject.Specification} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpecificationsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class SpecificationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class SpecificationsItemProvider extends ItemProviderAdapter implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecificationsItemProvider(AdapterFactory adapterFactory) {
+	public SpecificationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,28 +53,10 @@ public class SpecificationsItemProvider extends ItemProviderAdapter implements I
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSpecificationsgrammarPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addArgumentsPropertyDescriptor(object);
-			addBinaryopPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Specificationsgrammar feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSpecificationsgrammarPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Specifications_specificationsgrammar_feature"),
-						getString("_UI_PropertyDescriptor_description",
-								"_UI_Specifications_specificationsgrammar_feature", "_UI_Specifications_type"),
-						EcoreModelProjectPackage.Literals.SPECIFICATIONS__SPECIFICATIONSGRAMMAR, true, false, true,
-						null, null, null));
 	}
 
 	/**
@@ -86,10 +68,10 @@ public class SpecificationsItemProvider extends ItemProviderAdapter implements I
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Specifications_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Specifications_name_feature",
-								"_UI_Specifications_type"),
-						EcoreModelProjectPackage.Literals.SPECIFICATIONS__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Specification_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Specification_name_feature",
+								"_UI_Specification_type"),
+						EcoreModelProjectPackage.Literals.SPECIFICATION__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -102,38 +84,22 @@ public class SpecificationsItemProvider extends ItemProviderAdapter implements I
 	protected void addArgumentsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Specifications_arguments_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Specifications_arguments_feature",
-								"_UI_Specifications_type"),
-						EcoreModelProjectPackage.Literals.SPECIFICATIONS__ARGUMENTS, true, false, false,
+						getResourceLocator(), getString("_UI_Specification_arguments_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Specification_arguments_feature",
+								"_UI_Specification_type"),
+						EcoreModelProjectPackage.Literals.SPECIFICATION__ARGUMENTS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Binaryop feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBinaryopPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Specifications_binaryop_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Specifications_binaryop_feature",
-								"_UI_Specifications_type"),
-						EcoreModelProjectPackage.Literals.SPECIFICATIONS__BINARYOP, true, false, true, null, null,
-						null));
-	}
-
-	/**
-	 * This returns Specifications.gif.
+	 * This returns Specification.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Specifications"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Specification"));
 	}
 
 	/**
@@ -154,9 +120,9 @@ public class SpecificationsItemProvider extends ItemProviderAdapter implements I
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Specifications) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Specifications_type")
-				: getString("_UI_Specifications_type") + " " + label;
+		String label = ((Specification) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Specification_type")
+				: getString("_UI_Specification_type") + " " + label;
 	}
 
 	/**
@@ -170,9 +136,9 @@ public class SpecificationsItemProvider extends ItemProviderAdapter implements I
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Specifications.class)) {
-		case EcoreModelProjectPackage.SPECIFICATIONS__NAME:
-		case EcoreModelProjectPackage.SPECIFICATIONS__ARGUMENTS:
+		switch (notification.getFeatureID(Specification.class)) {
+		case EcoreModelProjectPackage.SPECIFICATION__NAME:
+		case EcoreModelProjectPackage.SPECIFICATION__ARGUMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

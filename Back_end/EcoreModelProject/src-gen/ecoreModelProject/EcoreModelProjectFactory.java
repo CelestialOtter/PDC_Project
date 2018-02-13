@@ -22,13 +22,13 @@ public interface EcoreModelProjectFactory extends EFactory {
 	EcoreModelProjectFactory eINSTANCE = ecoreModelProject.impl.EcoreModelProjectFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Specifications Grammar</em>'.
+	 * Returns a new object of class '<em>Search</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Specifications Grammar</em>'.
+	 * @return a new object of class '<em>Search</em>'.
 	 * @generated
 	 */
-	SpecificationsGrammar createSpecificationsGrammar();
+	Search createSearch();
 
 	/**
 	 * Returns a new object of class '<em>Binary Op</em>'.
@@ -40,13 +40,13 @@ public interface EcoreModelProjectFactory extends EFactory {
 	BinaryOp createBinaryOp();
 
 	/**
-	 * Returns a new object of class '<em>Specifications</em>'.
+	 * Returns a new object of class '<em>Specification</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Specifications</em>'.
+	 * @return a new object of class '<em>Specification</em>'.
 	 * @generated
 	 */
-	Specifications createSpecifications();
+	Specification createSpecification();
 
 	/**
 	 * Returns a new object of class '<em>Restaurant</em>'.

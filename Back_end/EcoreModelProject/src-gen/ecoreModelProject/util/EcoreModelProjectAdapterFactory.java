@@ -67,8 +67,8 @@ public class EcoreModelProjectAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected EcoreModelProjectSwitch<Adapter> modelSwitch = new EcoreModelProjectSwitch<Adapter>() {
 		@Override
-		public Adapter caseSpecificationsGrammar(SpecificationsGrammar object) {
-			return createSpecificationsGrammarAdapter();
+		public Adapter caseSearch(Search object) {
+			return createSearchAdapter();
 		}
 
 		@Override
@@ -77,8 +77,8 @@ public class EcoreModelProjectAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSpecifications(Specifications object) {
-			return createSpecificationsAdapter();
+		public Adapter caseSpecification(Specification object) {
+			return createSpecificationAdapter();
 		}
 
 		@Override
@@ -116,16 +116,16 @@ public class EcoreModelProjectAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ecoreModelProject.SpecificationsGrammar <em>Specifications Grammar</em>}'.
+	 * Creates a new adapter for an object of class '{@link ecoreModelProject.Search <em>Search</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ecoreModelProject.SpecificationsGrammar
+	 * @see ecoreModelProject.Search
 	 * @generated
 	 */
-	public Adapter createSpecificationsGrammarAdapter() {
+	public Adapter createSearchAdapter() {
 		return null;
 	}
 
@@ -144,16 +144,16 @@ public class EcoreModelProjectAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ecoreModelProject.Specifications <em>Specifications</em>}'.
+	 * Creates a new adapter for an object of class '{@link ecoreModelProject.Specification <em>Specification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ecoreModelProject.Specifications
+	 * @see ecoreModelProject.Specification
 	 * @generated
 	 */
-	public Adapter createSpecificationsAdapter() {
+	public Adapter createSpecificationAdapter() {
 		return null;
 	}
 
