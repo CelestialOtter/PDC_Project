@@ -12,13 +12,13 @@
     <genClasses ecoreClass="ecoreModelProject.ecore#//SpecificationsGrammar"/>
     <genClasses ecoreClass="ecoreModelProject.ecore#//BinaryOp">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/specificationsgrammar"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//BinaryOp/leftArguments"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//BinaryOp/rightArguments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/specifications"/>
     </genClasses>
     <genClasses ecoreClass="ecoreModelProject.ecore#//Specifications">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//Specifications/specificationsgrammar"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specifications/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreModelProject.ecore#//Specifications/arguments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//Specifications/binaryop"/>
     </genClasses>
     <genClasses ecoreClass="ecoreModelProject.ecore#//Restaurant"/>
     <genClasses ecoreClass="ecoreModelProject.ecore#//And"/>

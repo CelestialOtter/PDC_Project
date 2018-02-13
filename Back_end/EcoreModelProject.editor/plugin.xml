@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ecoreModelProject -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ecoreModelProject.presentation.EcoreModelProjectModelWizardID"
+            name="%_UI_EcoreModelProjectModelWizard_label"
+            class="ecoreModelProject.presentation.EcoreModelProjectModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EcoreModelProjectModelFile.gif">
+         <description>%_UI_EcoreModelProjectModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ecoreModelProject -->
+      <editor
+            id="ecoreModelProject.presentation.EcoreModelProjectEditorID"
+            name="%_UI_EcoreModelProjectEditor_label"
+            icon="icons/full/obj16/EcoreModelProjectModelFile.gif"
+            extensions="ecoremodelproject"
+            class="ecoreModelProject.presentation.EcoreModelProjectEditor"
+            contributorClass="ecoreModelProject.presentation.EcoreModelProjectActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
