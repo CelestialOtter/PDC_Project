@@ -66,9 +66,9 @@ public class EcoreModelProjectSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case EcoreModelProjectPackage.SPECIFICATIONS_GRAMMAR: {
-			SpecificationsGrammar specificationsGrammar = (SpecificationsGrammar) theEObject;
-			T result = caseSpecificationsGrammar(specificationsGrammar);
+		case EcoreModelProjectPackage.SEARCH: {
+			Search search = (Search) theEObject;
+			T result = caseSearch(search);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -120,17 +120,17 @@ public class EcoreModelProjectSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Specifications Grammar</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Search</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Specifications Grammar</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Search</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSpecificationsGrammar(SpecificationsGrammar object) {
+	public T caseSearch(Search object) {
 		return null;
 	}
 

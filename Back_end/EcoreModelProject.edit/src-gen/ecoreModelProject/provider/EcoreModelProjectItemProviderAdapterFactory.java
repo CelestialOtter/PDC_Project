@@ -73,26 +73,26 @@ public class EcoreModelProjectItemProviderAdapterFactory extends EcoreModelProje
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link ecoreModelProject.SpecificationsGrammar} instances.
+	 * This keeps track of the one adapter used for all {@link ecoreModelProject.Search} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SpecificationsGrammarItemProvider specificationsGrammarItemProvider;
+	protected SearchItemProvider searchItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link ecoreModelProject.SpecificationsGrammar}.
+	 * This creates an adapter for a {@link ecoreModelProject.Search}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSpecificationsGrammarAdapter() {
-		if (specificationsGrammarItemProvider == null) {
-			specificationsGrammarItemProvider = new SpecificationsGrammarItemProvider(this);
+	public Adapter createSearchAdapter() {
+		if (searchItemProvider == null) {
+			searchItemProvider = new SearchItemProvider(this);
 		}
 
-		return specificationsGrammarItemProvider;
+		return searchItemProvider;
 	}
 
 	/**
@@ -309,8 +309,8 @@ public class EcoreModelProjectItemProviderAdapterFactory extends EcoreModelProje
 	 * @generated
 	 */
 	public void dispose() {
-		if (specificationsGrammarItemProvider != null)
-			specificationsGrammarItemProvider.dispose();
+		if (searchItemProvider != null)
+			searchItemProvider.dispose();
 		if (binaryOpItemProvider != null)
 			binaryOpItemProvider.dispose();
 		if (specificationItemProvider != null)

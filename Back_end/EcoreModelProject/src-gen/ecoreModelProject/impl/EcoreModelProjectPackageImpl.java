@@ -8,9 +8,8 @@ import ecoreModelProject.EcoreModelProjectFactory;
 import ecoreModelProject.EcoreModelProjectPackage;
 import ecoreModelProject.Or;
 import ecoreModelProject.Restaurant;
+import ecoreModelProject.Search;
 import ecoreModelProject.Specification;
-import ecoreModelProject.SpecificationsGrammar;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -30,7 +29,7 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass specificationsGrammarEClass = null;
+	private EClass searchEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,8 +134,8 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSpecificationsGrammar() {
-		return specificationsGrammarEClass;
+	public EClass getSearch() {
+		return searchEClass;
 	}
 
 	/**
@@ -144,8 +143,8 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificationsGrammar_Specifications() {
-		return (EReference) specificationsGrammarEClass.getEStructuralFeatures().get(0);
+	public EReference getSearch_Specifications() {
+		return (EReference) searchEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -153,8 +152,8 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecificationsGrammar_Operations() {
-		return (EReference) specificationsGrammarEClass.getEStructuralFeatures().get(1);
+	public EReference getSearch_Operations() {
+		return (EReference) searchEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -267,9 +266,9 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 		isCreated = true;
 
 		// Create classes and their features
-		specificationsGrammarEClass = createEClass(SPECIFICATIONS_GRAMMAR);
-		createEReference(specificationsGrammarEClass, SPECIFICATIONS_GRAMMAR__SPECIFICATIONS);
-		createEReference(specificationsGrammarEClass, SPECIFICATIONS_GRAMMAR__OPERATIONS);
+		searchEClass = createEClass(SEARCH);
+		createEReference(searchEClass, SEARCH__SPECIFICATIONS);
+		createEReference(searchEClass, SEARCH__OPERATIONS);
 
 		binaryOpEClass = createEClass(BINARY_OP);
 		createEReference(binaryOpEClass, BINARY_OP__RIGHT_SPECIFICATION);
@@ -320,14 +319,13 @@ public class EcoreModelProjectPackageImpl extends EPackageImpl implements EcoreM
 		orEClass.getESuperTypes().add(this.getBinaryOp());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(specificationsGrammarEClass, SpecificationsGrammar.class, "SpecificationsGrammar", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpecificationsGrammar_Specifications(), this.getSpecification(), null, "specifications", null,
-				0, -1, SpecificationsGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecificationsGrammar_Operations(), this.getBinaryOp(), null, "operations", null, 0, -1,
-				SpecificationsGrammar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(searchEClass, Search.class, "Search", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSearch_Specifications(), this.getSpecification(), null, "specifications", null, 0, -1,
+				Search.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSearch_Operations(), this.getBinaryOp(), null, "operations", null, 0, -1, Search.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(binaryOpEClass, BinaryOp.class, "BinaryOp", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

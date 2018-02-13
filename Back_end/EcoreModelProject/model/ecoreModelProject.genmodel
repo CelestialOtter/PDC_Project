@@ -9,9 +9,9 @@
   <foreignModel>ecoreModelProject.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="EcoreModelProject" disposableProviderFactory="true" ecorePackage="ecoreModelProject.ecore#/">
-    <genClasses ecoreClass="ecoreModelProject.ecore#//SpecificationsGrammar">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//SpecificationsGrammar/specifications"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//SpecificationsGrammar/operations"/>
+    <genClasses ecoreClass="ecoreModelProject.ecore#//Search">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//Search/specifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//Search/operations"/>
     </genClasses>
     <genClasses ecoreClass="ecoreModelProject.ecore#//BinaryOp">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreModelProject.ecore#//BinaryOp/rightSpecification"/>

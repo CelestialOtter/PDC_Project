@@ -56,8 +56,8 @@ public class EcoreModelProjectFactoryImpl extends EFactoryImpl implements EcoreM
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case EcoreModelProjectPackage.SPECIFICATIONS_GRAMMAR:
-			return createSpecificationsGrammar();
+		case EcoreModelProjectPackage.SEARCH:
+			return createSearch();
 		case EcoreModelProjectPackage.BINARY_OP:
 			return createBinaryOp();
 		case EcoreModelProjectPackage.SPECIFICATION:
@@ -78,9 +78,9 @@ public class EcoreModelProjectFactoryImpl extends EFactoryImpl implements EcoreM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SpecificationsGrammar createSpecificationsGrammar() {
-		SpecificationsGrammarImpl specificationsGrammar = new SpecificationsGrammarImpl();
-		return specificationsGrammar;
+	public Search createSearch() {
+		SearchImpl search = new SearchImpl();
+		return search;
 	}
 
 	/**
