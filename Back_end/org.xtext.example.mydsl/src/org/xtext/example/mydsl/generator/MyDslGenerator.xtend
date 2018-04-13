@@ -38,7 +38,7 @@ class MyDslGenerator extends AbstractGenerator {
 			
 			public void run(){
 ллл				лFOR s : (resource.contents.get(0) as Search).specifications
-ллл					switch spec{
+ллл					switch s.type{
 ллл						case spec.isType("Restaurant") : "methode restaurant"
 ллл						default : ""
 ллл					}
