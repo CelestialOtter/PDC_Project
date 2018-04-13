@@ -7,6 +7,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import ecoreModelProject.Restaurant
+import ecoreModelProject.Specification
+import ecoreModelProject.Search
 
 /**
  * Generates code from your model files on save.
@@ -16,7 +19,39 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class MyDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
+		fsa.generateFile('Restaurant.java', '''
+		/***
+		Restaurant class
+		***/
+		
+		class Restaurant{
+			String name
+		}
+		''')
+	
+	fsa.generateFile('Serveur.java', '''
+		
+		public class Serveur{
+			static public void main(String args[]){
+				
+			}
+			
+			public void run(){
+«««				«FOR s : (resource.contents.get(0) as Search).specifications
+«««					switch spec{
+«««						case spec.isType("Restaurant") : "methode restaurant"
+«««						default : ""
+«««					}
+«««				»
+«««				
+«««				«ENDFOR»
+			}
+			
+			
+		}
+		
+	''')
+		resource.contents.get(0)
 //			resource.allContents
 //				.filter(Greeting)
 //				.map[name]

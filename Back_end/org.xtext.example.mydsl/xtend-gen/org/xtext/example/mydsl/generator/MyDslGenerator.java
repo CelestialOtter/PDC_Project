@@ -4,6 +4,7 @@
 package org.xtext.example.mydsl.generator;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -17,5 +18,50 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class MyDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("/***");
+    _builder.newLine();
+    _builder.append("Restaurant class");
+    _builder.newLine();
+    _builder.append("***/");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("class Restaurant{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("String name");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    fsa.generateFile("Restaurant.java", _builder);
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.newLine();
+    _builder_1.append("public class Serveur{");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.append("static public void main(String args[]){");
+    _builder_1.newLine();
+    _builder_1.append("\t\t");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.append("}");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.append("public void run(){");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.append("}");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.newLine();
+    _builder_1.append("\t");
+    _builder_1.newLine();
+    _builder_1.append("}");
+    _builder_1.newLine();
+    _builder_1.newLine();
+    fsa.generateFile("Serveur.java", _builder_1);
+    resource.getContents().get(0);
   }
 }
