@@ -76,61 +76,25 @@ function createXmlHttpRequestObject()
 
     return xdr; 
 }
-
-
-
 /*
-
-function openJsonFile(){
-	
-	
-
-   console.log("pass open F")
-  var file = new File([""],"D:\Documents\Cours_Master_Ice_Annee_1\Cours3\IDM\Projet\Front\quartier.json");
-  if (!file) {
-    return;
-  }
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var contents = e.target.result;
-	
-	console.log("contents:"+contents);
-    parseAndDraw(contents);
-  };
-  
-	console.log("file:"+file);
-  reader.readAsText(file);
-  
-
-
-	
-}
-
+L.geoJSON(jsongeometry[30],{
+        style: '#800026'
+    }).addTo(mymap);
 */
-function openJsonFile(){
-var file = new File([""],"D:\Documents\Cours_Master_Ice_Annee_1\Cours3\IDM\Projet\Front\quartier.json");
-file.open("r"); // open file with read access
-var str = "";
-while (!file.eof) {
-    // read each line of text
-    str += file.readln() + "\n";
-}
-file.close();
-alert(str);
-}
+var jsongeometry
 function requete(){
 	
 	var xhr = createXmlHttpRequestObject();
     //xhr.overrideMimeType("application/json");
 	
     //xhr.open('GET', 'quartier.json');
-	xhr.open("GET","https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=recensement-population-2012-grands-quartiers-population-toulouse&rows=100&facet=libgq", true );
+	xhr.open("GET","https://data.toulouse-metropole.fr/api/records/1.0/search/?dataset=recensement-population-2012-grands-quartiers-population-toulouse&rows=60&facet=libgq", true );
       
     xhr.onreadystatechange = function (){
 		
 		if (xhr.readyState == 4 && xhr.status == 200) {
 			var jsonResponse = JSON.parse(xhr.responseText);
-            parseAndDraw(jsonResponse)
+            jsongeometry = parseAndDraw(jsonResponse)
 
 		}
 	}
@@ -161,7 +125,6 @@ var geojson
  
 function parseAndDraw(json){
 
-   console.log("json:"+json);
 	var jsongeometry = []
         
 	for(i = 0; i<json.records.length; i++){
@@ -190,8 +153,10 @@ function parseAndDraw(json){
 
     geojson = L.geoJson(jsongeometry, {
         style: style,
-        onEachFeature: onEachFeature
+        onEachFeature:onEachFeature
     }).addTo(mymap);
+	
+	
 	
 	
 	return jsongeometry
@@ -247,14 +212,22 @@ function resetHighlight(e) {
 }
 
 function zoomToFeature(e) {
+	
     mymap.fitBounds(e.target.getBounds());
-}
+	}
+
 
 function onEachFeature(feature, layer) {
+	
+
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature
+        dblclick: zoomToFeature,
+		click: function() { 
+		document.getElementById("textclickQuartier").innerHTML = feature.properties.name+" "; 
+		}
+		
     });
 }
 //___________________________
@@ -262,12 +235,21 @@ function onEachFeature(feature, layer) {
 
 var mymap = L.map('mapid').setView([43.588747, 1.409683], 12);
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: 'salut',
+		attribution: 'Toulouse',
 		maxZoom: 18,
 		id: 'DS_PHR1A_201408101046059_FR1_PX_E001N43_0615_01728'
 	}).addTo(mymap);
 	
 
+var accidentIcon = L.icon({
+		iconUrl: 'pointSpot.png',
+
+		iconSize:     [9, 9], // size of the icon
+		iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+		popupAnchor:  [0, -12] // point from which the popup should open relative to the iconAnchor
+	});
+
+//var marker = L.marker([43.60222440264482, 1.4405517136139772], {icon: accidentIcon}).addTo(mymap);
     
 
 
@@ -275,7 +257,6 @@ function start(){
 	
  requete()
  
-var buttSend = document.getElementById('buttonrequete').addEventListener('click',envoieRequete);
 
 
 }
