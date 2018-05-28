@@ -19,7 +19,7 @@ import ecoreModelProject.Search
 class MyDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile('EmbededJettyMain.java', '''
+		fsa.generateFile('\\embedded_jetty_example\\EmbededJettyMain.java', '''
 		package com.javacodegeeks.snippets.enterprise.embedded_jetty_example;
 		
 		import org.eclipse.jetty.server.Server;
@@ -36,49 +36,7 @@ class MyDslGenerator extends AbstractGenerator {
 		}
 		''')
 		
-		fsa.generateFile('pom.xml', '''
-		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-			<modelVersion>4.0.0</modelVersion>
-		
-			<groupId>com.javacodegeeks.snippets.enterprise</groupId>
-			<artifactId>embedded-jetty-example</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<packaging>jar</packaging>
-		
-			<name>embedded-jetty-example</name>
-			<url>http://maven.apache.org</url>
-		
-			<properties>
-				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-			</properties>
-		
-			<dependencies>
-				<!--Jetty dependencies start here -->
-				<dependency>
-					<groupId>org.eclipse.jetty</groupId>
-					<artifactId>jetty-server</artifactId>
-					<version>9.2.11.v20150529</version>
-				</dependency>
-				<dependency>
-					<groupId>org.eclipse.jetty</groupId>
-					<artifactId>jetty-servlet</artifactId>
-					<version>9.2.11.v20150529</version>
-				</dependency>
-				<!--Jetty dependencies end here -->
-				<!--Json dependencies end here -->
-				<dependency>
-		            <groupId>com.googlecode.json-simple</groupId>
-		            <artifactId>json-simple</artifactId>
-		            <version>1.1.1</version>
-		        </dependency>
-		
-			</dependencies>
-		</project>
-
-		''')
-		
-		fsa.generateFile('ExampleServlet.java', '''
+		fsa.generateFile('\\embeddedjetty\\servlet\\ExampleServlet.java', '''
 		package com.javacodegeeks.snippets.enterprise.embeddedjetty.servlet;
 		
 		import java.io.IOException;
