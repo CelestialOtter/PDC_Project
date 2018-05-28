@@ -133,6 +133,8 @@ function parseAndDraw(json){
 	jsongeometry[i] = {
             "type": "Feature",
             "properties": {"party": "first",
+						   "density": i,
+							"param": getParamQuarter(name) ,
                             "name": json.records[i].fields.libgq},
             "geometry": {
                 "type": "Polygon",
@@ -163,21 +165,41 @@ function parseAndDraw(json){
 	
 }
 
-
+function getParamQuarter(name){
+	
+	
+	/*for(i = 0; i<jsonP.length; i++){
+		if(jsonP[i].name==name){*/
+			
+					//for(j = 0; j<jsonP[i].length; j++){
+					
+							param = [
+							"type", "Feature"]
+							
+							
+					//}
+		/*		
+		}
+    }*/
+	return param
+}
 
 
 //__Contour quartier_______________
-var colorp = "#ff0000";
+var colorp = "#ff0990";
 
 
 function getColor(d) {
-    return d > 1000 ? '#800026' :
-           d > 500  ? '#BD0026' :
-           d > 200  ? '#E31A1C' :
-           d > 100  ? '#FC4E2A' :
-           d > 50   ? '#FD8D3C' :
-           d > 20   ? '#FEB24C' :
-           d > 10   ? '#FED976' :
+    return d%11 > 10? '#800026' :
+           d%11 > 9  ? '#BD0026' :
+           d%11 > 8  ? '#E31A1C' :
+           d%11 > 7  ? '#FC4E2A' :
+           d%11 > 6   ? '#FD8D3C' :
+           d%11 > 5   ? '#FEB24C' :
+           d%11 > 4   ? '#FGD006' :
+           d%11 > 3   ? '#FED976' :
+           d%11 > 2   ? '#FAA666' :
+           d%11 > 1   ? '#FAAA06' :
                       '#FFEDA0';
 }
 
@@ -217,6 +239,7 @@ function zoomToFeature(e) {
 	}
 
 
+ var feat
 function onEachFeature(feature, layer) {
 	
 
@@ -225,7 +248,27 @@ function onEachFeature(feature, layer) {
         mouseout: resetHighlight,
         dblclick: zoomToFeature,
 		click: function() { 
-		document.getElementById("textclickQuartier").innerHTML = feature.properties.name+" "; 
+		str = feature.properties.name+" ";
+		
+		for(i = 0; i<feature.properties.param.length; i++){
+			
+			str = str + " \_!_!_!_/"+feature.properties.param[i];
+			
+		}
+
+		document.getElementById("textclickQuartier").innerHTML = str;
+		
+			layer.setStyle({
+				weight: 5,
+				color: '#800026',
+				
+				dashArray: '',
+				fillOpacity: 0.7
+			});
+
+			if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+				layer.bringToFront();
+			}		
 		}
 		
     });
@@ -240,7 +283,7 @@ L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		id: 'DS_PHR1A_201408101046059_FR1_PX_E001N43_0615_01728'
 	}).addTo(mymap);
 	
-
+L.control.scale().addTo(mymap);
 var accidentIcon = L.icon({
 		iconUrl: 'pointSpot.png',
 
