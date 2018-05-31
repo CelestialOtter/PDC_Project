@@ -19,7 +19,7 @@ import ecoreModelProject.Search
 class MyDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile('\\embedded_jetty_example\\EmbededJettyMain.java', '''
+		fsa.generateFile('\\embedded_jetty_example\\EmbeddedJettyMain.java', '''
 		package com.javacodegeeks.snippets.enterprise.embedded_jetty_example;
 		
 		import org.eclipse.jetty.server.Server;
@@ -58,7 +58,7 @@ class MyDslGenerator extends AbstractGenerator {
 		import org.json.simple.parser.JSONParser;
 		import org.json.simple.parser.ParseException;
 		
-		public class ExempleServlet extends HttpServlet {
+		public class ExampleServlet extends HttpServlet {
 			JSONArray quartiers;
 			ArrayList<String> locations;
 			@Override
