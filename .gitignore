@@ -1,2 +1,10 @@
 
 \.project
+
+*.xtendbin
+
+Run_time/SearchTest/target/embedded-jetty-example-0\.0\.1-SNAPSHOT\.jar
+
+Run_time/SearchTest/target/maven-status/maven-compiler-plugin/compile/default-compile/
+
+Back_end/org\.xtext\.example\.mydsl/xtend-gen/org/xtext/example/mydsl/generator/MyDslGenerator\.java
