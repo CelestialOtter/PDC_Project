@@ -19,8 +19,10 @@ import ecoreModelProject.Search
 class MyDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+
 		fsa.generateFile('\\pdc.oc.server\\EmbededJettyMain.java', '''
 		package pdc.oc.server;
+
 		
 		import org.eclipse.jetty.server.Server;
 		import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -65,11 +67,13 @@ class MyDslGenerator extends AbstractGenerator {
 		import org.json.simple.parser.JSONParser;
 		import org.json.simple.parser.ParseException;
 		
+
 		public class RequestServlet extends HttpServlet {
 			/**
 			 * 
 			 */
 			private static final long serialVersionUID = 1L;
+
 			ArrayList<String> locations;
 			JSONArray jsonquartiers;
 		
@@ -80,11 +84,11 @@ class MyDslGenerator extends AbstractGenerator {
 				try {
 					Object obj = parser.parse(new FileReader("D:\\Baptiste\\Master\\PDC\\quartiers.json"));
 					JSONArray jsonquartiers = (JSONArray) obj;
-		«FOR s : (resource.contents.get(0) as Search).specifications»
-											«IF s instanceof Restaurant»
+		Â«FOR s : (resource.contents.get(0) as Search).specificationsÂ»
+											Â«IF s instanceof RestaurantÂ»
 					jsonquartiers = restaurantRequest(jsonquartiers);
-					«ENDIF»
-					«ENDFOR»
+					Â«ENDIFÂ»
+					Â«ENDFORÂ»
 					jsonquartiers = cleanObject(jsonquartiers);
 					jsonquartiers = computeTotal(jsonquartiers);
 					resp.setStatus(HttpStatus.OK_200);
@@ -131,8 +135,8 @@ class MyDslGenerator extends AbstractGenerator {
 				
 				
 
-				«FOR s : (resource.contents.get(0) as Search).specifications»
-					«IF s instanceof Restaurant»						
+				Â«FOR s : (resource.contents.get(0) as Search).specificationsÂ»
+					Â«IF s instanceof RestaurantÂ»						
 						public JSONArray restaurantRequest(JSONArray jsonquartiers) throws IOException {
 								String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 								String charset = java.nio.charset.StandardCharsets.UTF_8.name();
@@ -160,7 +164,7 @@ class MyDslGenerator extends AbstractGenerator {
 										try {
 											JSONObject reponse = (JSONObject) parser.parse(responseBody);
 											JSONArray results = (JSONArray) reponse.get("results");
-											float wanted = (float) «(resource.contents.get(0) as Search).specifications.get(0).arguments»;
+											float wanted = (float) Â«(resource.contents.get(0) as Search).specifications.get(0).argumentsÂ»;
 											int numberOk = 0;
 											for (int k = 0; k < results.size(); k++) {
 												JSONObject resto = (JSONObject) results.get(k);
@@ -179,10 +183,10 @@ class MyDslGenerator extends AbstractGenerator {
 								}
 								return jsonquartiers;
 							}
-									«ENDIF»
+									Â«ENDIFÂ»
 								
 							
-								«ENDFOR»
+								Â«ENDFORÂ»
 			}
 
 
