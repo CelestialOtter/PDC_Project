@@ -20,14 +20,14 @@ class MyDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
-		fsa.generateFile('\\pdc.oc.server\\EmbededJettyMain.java', '''
-		package pdc.oc.server;
+		fsa.generateFile('\\pdc\\oc\\server\\EmbeddedJettyMain.java', '''
+		package main.java.pdc.oc.server;
 
 		
 		import org.eclipse.jetty.server.Server;
 		import org.eclipse.jetty.servlet.ServletContextHandler;
 		
-		import pdc.oc.servlet.RequestServlet;
+		import main.java.pdc.oc.servlet.RequestServlet;
 		
 		public class EmbeddedJettyMain {
 			public static void main(String[] args) throws Exception {
@@ -39,8 +39,8 @@ class MyDslGenerator extends AbstractGenerator {
 		}
 		''')
 		
-		fsa.generateFile('\\pdc.oc.servlet\\ExampleServlet.java', '''
-		package pdc.oc.servlet;
+		fsa.generateFile('\\pdc\\oc\\servlet\\RequestServlet.java', '''
+		package main.java.pdc.oc.servlet;
 		
 		import java.io.FileReader;
 		import java.io.IOException;
@@ -84,11 +84,11 @@ class MyDslGenerator extends AbstractGenerator {
 				try {
 					Object obj = parser.parse(new FileReader("D:\\Baptiste\\Master\\PDC\\quartiers.json"));
 					JSONArray jsonquartiers = (JSONArray) obj;
-		Â«FOR s : (resource.contents.get(0) as Search).specificationsÂ»
-											Â«IF s instanceof RestaurantÂ»
+		«FOR s : (resource.contents.get(0) as Search).specifications»
+											«IF s instanceof Restaurant»
 					jsonquartiers = restaurantRequest(jsonquartiers);
-					Â«ENDIFÂ»
-					Â«ENDFORÂ»
+					«ENDIF»
+					«ENDFOR»
 					jsonquartiers = cleanObject(jsonquartiers);
 					jsonquartiers = computeTotal(jsonquartiers);
 					resp.setStatus(HttpStatus.OK_200);
@@ -135,8 +135,8 @@ class MyDslGenerator extends AbstractGenerator {
 				
 				
 
-				Â«FOR s : (resource.contents.get(0) as Search).specificationsÂ»
-					Â«IF s instanceof RestaurantÂ»						
+				«FOR s : (resource.contents.get(0) as Search).specifications»
+					«IF s instanceof Restaurant»						
 						public JSONArray restaurantRequest(JSONArray jsonquartiers) throws IOException {
 								String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 								String charset = java.nio.charset.StandardCharsets.UTF_8.name();
@@ -164,7 +164,7 @@ class MyDslGenerator extends AbstractGenerator {
 										try {
 											JSONObject reponse = (JSONObject) parser.parse(responseBody);
 											JSONArray results = (JSONArray) reponse.get("results");
-											float wanted = (float) Â«(resource.contents.get(0) as Search).specifications.get(0).argumentsÂ»;
+											float wanted = (float) «(resource.contents.get(0) as Search).specifications.get(0).arguments»;
 											int numberOk = 0;
 											for (int k = 0; k < results.size(); k++) {
 												JSONObject resto = (JSONObject) results.get(k);
@@ -183,10 +183,10 @@ class MyDslGenerator extends AbstractGenerator {
 								}
 								return jsonquartiers;
 							}
-									Â«ENDIFÂ»
+									«ENDIF»
 								
 							
-								Â«ENDFORÂ»
+								«ENDFOR»
 			}
 
 
