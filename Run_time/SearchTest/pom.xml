@@ -2,12 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.javacodegeeks.snippets.enterprise</groupId>
-	<artifactId>embedded-jetty-example</artifactId>
+	<artifactId>server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>embedded-jetty-example</name>
+	<name>serveur</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -35,7 +34,8 @@
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
-
+        
+        
 	</dependencies>
     
     <build>
@@ -52,9 +52,10 @@
             </execution>
         </executions>
         <configuration>
-            <mainClass>com.javacodegeeks.snippets.enterprise.embedded_jetty_example.EmbeddedJettyMain</mainClass>
+            <mainClass>main.java.pdc.oc.server.EmbeddedJettyMain</mainClass>
         </configuration>
     </plugin>
 </plugins>
     </build>
+    <groupId>pdc.oc</groupId>
 </project>

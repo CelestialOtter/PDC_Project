@@ -7,4 +7,12 @@ Run_time/SearchTest/target/embedded-jetty-example-0\.0\.1-SNAPSHOT\.jar
 
 Run_time/SearchTest/target/maven-status/maven-compiler-plugin/compile/default-compile/
 
+Run_time/SearchTest/target/maven-archiver/pom\.properties
+
 Back_end/org\.xtext\.example\.mydsl/xtend-gen/org/xtext/example/mydsl/generator/MyDslGenerator\.java
+
+Run_time/SearchTest/target/maven-archiver/pom\.properties
+
+Run_time/SearchTest/target/server-0\.0\.1-SNAPSHOT\.jar
+
+Run_time/SearchTest/target/classes/main/java/pdc/oc/servlet/RequestServlet\.class
